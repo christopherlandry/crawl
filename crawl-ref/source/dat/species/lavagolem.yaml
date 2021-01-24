@@ -1,0 +1,71 @@
+enum: SP_LAVA_GOLEM
+monster: MONS_GARGOYLE
+name: "Lava Golem"
+genus: "Golem"
+short_name: "LG"
+difficulty: Advanced
+difficulty_priority: 0
+species_flags:
+  - hairless
+aptitudes:
+  xp: -1
+  hp: +1
+  mp_mod: 0
+  mr: 3
+  fighting: 0
+  short_blades: 0
+  long_blades: 0
+  axes: -1
+  maces_and_flails: 1
+  polearms: -2
+  staves: -4
+  slings: -3
+  bows: -3
+  crossbows: -2
+  throwing: 1
+  armour: 2
+  dodging: -2
+  stealth: -2
+  shields: 1
+  unarmed_combat: 0
+  spellcasting: -1
+  conjurations: 1
+  hexes: -1
+  summoning: -2
+  necromancy: 0
+  translocations: -1
+  transmutations: -1
+  fire_magic: 3
+  ice_magic: -4
+  air_magic: -2
+  earth_magic: 1
+  poison_magic: 0
+  invocations: 0
+  evocations: -1
+str: 10
+int: 10
+dex: 4
+levelup_stat_frequency: 4
+levelup_stats:
+  - str
+  - int
+mutations:
+  1:
+    MUT_MIASMA_IMMUNITY: 1
+    MUT_NEGATIVE_ENERGY_RESISTANCE: 1
+    MUT_PETRIFICATION_RESISTANCE: 1
+    MUT_SHOCK_RESISTANCE: 1
+    MUT_COLD_VULNERABILITY: 1
+    MUT_HEAT_RESISTANCE: 1
+    MUT_UNBREATHING: 1
+    MUT_SCROLL_BURNER: 1
+    MUT_ARMOR_ATTUNED: 3
+recommended_jobs:
+  - JOB_FIGHTER
+  - JOB_CONJURER
+  - JOB_FIRE_ELEMENTALIST
+  - JOB_EARTH_ELEMENTALIST
+recommended_weapons:
+  - SK_MACES_FLAILS
+  - SK_LONG_BLADES
+  - SK_THROWING

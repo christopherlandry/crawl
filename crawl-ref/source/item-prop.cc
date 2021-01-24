@@ -916,6 +916,7 @@ void auto_id_inventory()
 
 void do_curse_item(item_def &item, bool quiet)
 {
+    return;
     // Already cursed?
     if (item.flags & ISFLAG_CURSED)
         return;

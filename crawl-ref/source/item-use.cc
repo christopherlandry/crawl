@@ -2864,6 +2864,10 @@ string cannot_read_item_reason(const item_def &item)
     if (you.duration[DUR_NO_SCROLLS])
         return "You cannot read scrolls in your current state!";
 
+    //lava golems
+    if (you.get_mutation_level(MUT_SCROLL_BURNER))
+        return "That would turn to ash in your hands!";
+
     // don't waste the player's time reading known scrolls in situations where
     // they'd be useless
 

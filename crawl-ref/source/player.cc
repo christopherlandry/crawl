@@ -2100,12 +2100,13 @@ static int _player_evasion(ev_ignore_type evit)
 int player_armour_shield_spell_penalty()
 {
     const int scale = 100;
+    const int armor_factor = 19 - (you.get_mutation_level(MUT_ARMOR_ATTUNED)*5);
 
     const int body_armour_penalty =
-        max(19 * you.adjusted_body_armour_penalty(scale), 0);
+        max(armor_factor * you.adjusted_body_armour_penalty(scale), 0);
 
     const int total_penalty = body_armour_penalty
-                 + 19 * you.adjusted_shield_penalty(scale);
+                 + armor_factor * you.adjusted_shield_penalty(scale);
 
     return max(total_penalty, 0) / scale;
 }
@@ -6051,7 +6052,7 @@ mon_holy_type player::holiness(bool temp) const
     // Alive Vampires are MH_NATURAL
     if (is_lifeless_undead(temp))
         holi = MH_UNDEAD;
-    else if (species == SP_GARGOYLE)
+    else if (species == SP_GARGOYLE || species == SP_LAVA_GOLEM)
         holi = MH_NONLIVING;
     else
         holi = MH_NATURAL;

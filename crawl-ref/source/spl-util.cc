@@ -1255,6 +1255,8 @@ string spell_uselessness_reason(spell_type spell, bool temp, bool prevent,
     case SPELL_STATUE_FORM:
         if (SP_GARGOYLE == you.species)
             return "you're already a statue.";
+        if (you.species == SP_LAVA_GOLEM)
+            return "you're already made of solid rock.";
         // fallthrough to other forms
 
     case SPELL_BEASTLY_APPENDAGE:

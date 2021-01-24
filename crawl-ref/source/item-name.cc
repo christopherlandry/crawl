@@ -2588,6 +2588,8 @@ bool is_emergency_item(const item_def &item)
     switch (item.base_type)
     {
     case OBJ_SCROLLS:
+        if (you.species == SP_LAVA_GOLEM)
+            return false;
         switch (item.sub_type)
         {
         case SCR_TELEPORTATION:
@@ -2641,6 +2643,8 @@ bool is_good_item(const item_def &item)
     switch (item.base_type)
     {
     case OBJ_SCROLLS:
+        if (you.species == SP_LAVA_GOLEM)
+            return false;
         return item.sub_type == SCR_ACQUIREMENT;
     case OBJ_POTIONS:
         if (you.species == SP_MUMMY)
@@ -2672,6 +2676,7 @@ bool is_bad_item(const item_def &item)
     switch (item.base_type)
     {
     case OBJ_SCROLLS:
+        if (you.species == SP_LAVA_GOLEM) return false;
         switch (item.sub_type)
         {
 #if TAG_MAJOR_VERSION == 34
@@ -2911,6 +2916,8 @@ bool is_useless_item(const item_def &item, bool temp, bool ident)
         return false;
 
     case OBJ_SCROLLS:
+        if(you.species == SP_LAVA_GOLEM)
+            return true;
         if (temp && silenced(you.pos()))
             return true; // can't use scrolls while silenced
 

@@ -42,9 +42,9 @@ halfling_f
 orc_f ORC
 orc_m
 %rim 0
-lorc_m0 LAVA_ORC
+lorc_m0 LAVA_GOLEM
 lorc_f0
-lorc_m1 LAVA_ORC_HEAT
+lorc_m1 
 lorc_m2
 lorc_m3
 lorc_m4

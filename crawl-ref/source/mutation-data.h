@@ -711,7 +711,7 @@ static const mutation_def mut_data[] =
 
   {"You have sharp fingernails.",
    "You have very sharp fingernails.",
-   "You have claws for hands."},
+   "You have claws for s."},
 
   {"Your fingernails lengthen.",
    "Your fingernails sharpen.",
@@ -1986,6 +1986,30 @@ static const mutation_def mut_data[] =
   {"You feel resistant to acid.", "",  ""},
   {"You feel less resistant to acid.", "", ""},
 },
+
+{ MUT_ARMOR_ATTUNED, 0, 3, mutflag::good, false,
+    "attunement",
+
+    {"Your spellcasting is less encumbered by heavy armor",
+     "You can cast spells even in heavy armor",
+     "Armor is no hindrance to your spellcasting"},
+    {"You feel more attuned to your armor.",
+     "You feel more attuned to your armor.",
+     "You feel more attuned to your armor."},
+    {"You feel less attuned to your armor.",
+     "You feel less attuned to your armor.",
+     "You feel less attuned to your armor."},
+},
+
+{ MUT_SCROLL_BURNER, 0, 1, mutflag::bad, false,
+  "scroll burner",
+
+  {"Scrolls turn to ash in your hands.", "", ""},
+  {"Your hands are smoldering.", "",  ""},
+  {"Your hands stop smoldering.", "", ""},
+},
+
+
 };
 
 static const mutation_category_def category_mut_data[] =

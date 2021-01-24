@@ -14,7 +14,7 @@ enum mutation_type
     MUT_HORNS,          // head
     MUT_STINGER,
     MUT_TALONS,         // feet
-    MUT_TENTACLE_SPIKE, // Octopode only.
+    MUT_TENTACLE_SPIKE, // Octopode only 
 
     // scales
     MUT_DISTORTION_FIELD,
@@ -232,6 +232,8 @@ enum mutation_type
 #endif
     MUT_ROLL,
     MUT_ARMOURED_TAIL,
+    MUT_ARMOR_ATTUNED,
+    MUT_SCROLL_BURNER,
 #if TAG_MAJOR_VERSION == 34
     MUT_BIG_BRAIN,
     MUT_SHARP_SCALES,

@@ -3906,6 +3906,8 @@ static tileidx_t _tileidx_player_species_base(const species_type species)
             return TILEG_SP_OCTOPODE;
         case SP_GARGOYLE:
             return TILEG_SP_GARGOYLE;
+        case SP_LAVA_GOLEM:
+            return TILEG_SP_LAVA_GOLEM;
         case SP_FORMICID:
             return TILEG_SP_FORMICID;
         case SP_VINE_STALKER:

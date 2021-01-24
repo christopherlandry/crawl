@@ -1065,7 +1065,8 @@ static int _shatter_player_dice()
         return 6; // reduced later by petrification's damage reduction
     else if (you.form == transformation::statue
              || you.form == transformation::ice_beast
-             || you.species == SP_GARGOYLE)
+             || you.species == SP_GARGOYLE
+             || you.species == SP_LAVA_GOLEM)
         return 6;
     else if (you.airborne())
         return 1;
@@ -2086,7 +2087,7 @@ bool setup_fragmentation_beam(bolt &beam, int pow, const actor *caster,
     {
         const bool petrified = (you.petrified() || you.petrifying());
 
-        if (you.form == transformation::statue || you.species == SP_GARGOYLE)
+        if (you.form == transformation::statue || you.species == SP_GARGOYLE || you.species == SP_LAVA_GOLEM)
         {
             beam.name       = "blast of rock fragments";
             beam.colour     = BROWN;

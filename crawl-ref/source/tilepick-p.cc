@@ -651,6 +651,8 @@ tileidx_t tilep_species_to_base_tile(int sp, int level)
         return TILEP_BASE_BARACHI;
     case SP_GNOLL:
         return TILEP_BASE_GNOLL;
+    case SP_LAVA_GOLEM:
+        return TILEP_BASE_LAVA_GOLEM;
     default:
         return TILEP_BASE_HUMAN;
     }
@@ -740,6 +742,7 @@ void tilep_race_default(int sp, int level, dolls_data *doll)
         case SP_BARACHI:
         case SP_GNOLL:
         case SP_GARGOYLE:
+        case SP_LAVA_GOLEM:
         case SP_VINE_STALKER:
             hair = 0;
             break;
