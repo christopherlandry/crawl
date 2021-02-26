@@ -709,7 +709,7 @@ bool feat_is_mimicable(dungeon_feature_type feat, bool strict)
 bool feat_is_shaftable(dungeon_feature_type feat)
 {
     return feat_has_dry_floor(feat)
-           && !feat_is_stair(feat)
+           //&& !feat_is_stair(feat)
            && !feat_is_portal(feat);
 }
 

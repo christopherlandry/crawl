@@ -580,10 +580,16 @@ static level_id _travel_destination(const dungeon_feature_type how,
                                     + shaft_dest.describe() + ".");
         }
 
-        mprf("You %s into a shaft and drop %d floor%s!",
-             you.airborne() ? "are sucked" : "fall",
-             shaft_depth,
-             shaft_depth > 1 ? "s" : "");
+        const dungeon_feature_type ygrd = env.grid(you.pos());
+        if(ygrd == DNGN_STONE_STAIRS_DOWN_II || ygrd == DNGN_STONE_STAIRS_DOWN_III)
+            mprf("The stairs give way, turning into a fun slide! You slide down %d floor%s!",
+                shaft_depth,
+                shaft_depth > 1 ? "s" : "");
+        else 
+            mprf("You %s into a shaft and drop %d floor%s!",
+                you.airborne() ? "are sucked" : "fall",
+                shaft_depth,
+                shaft_depth > 1 ? "s" : "");
 
         // Shafts are one-time-use.
         mpr("The shaft crumbles and collapses.");

@@ -1233,7 +1233,7 @@ static bool _can_take_stairs(dungeon_feature_type ftype, bool down,
                              bool known_shaft)
 {
     // Up and down both work for shops, portals, and altars.
-    if (ftype == DNGN_ENTER_SHOP || feat_is_altar(ftype))
+    if (ftype == DNGN_ENTER_SHOP || feat_is_altar(ftype) || ftype==DNGN_STONE_STAIRS_UP_II || ftype==DNGN_STONE_STAIRS_UP_III)
     {
         if (crawl_state.doing_prev_cmd_again)
         {
@@ -1245,6 +1245,8 @@ static bool _can_take_stairs(dungeon_feature_type ftype, bool down,
             canned_msg(MSG_TOO_BERSERK);
         else if (ftype == DNGN_ENTER_SHOP) // don't convert to capitalism
             shop();
+        else if (ftype==DNGN_STONE_STAIRS_UP_II || ftype==DNGN_STONE_STAIRS_UP_III)
+            try_god_conversion(GOD_XOM);
         else
             try_god_conversion(feat_altar_god(ftype));
         // Even though we may have "succeeded", return false so we don't keep
@@ -1503,7 +1505,7 @@ static void _take_stairs(bool down)
 
     const dungeon_feature_type ygrd = env.grid(you.pos());
 
-    const bool shaft = (down && get_trap_type(you.pos()) == TRAP_SHAFT);
+    const bool shaft = (down && (get_trap_type(you.pos()) == TRAP_SHAFT));
 
     if (!_can_take_stairs(ygrd, down, shaft))
         return;
@@ -1527,6 +1529,8 @@ static void _take_stairs(bool down)
 
     if (shaft)
         start_delay<DescendingStairsDelay>(0);
+    else if (ygrd == DNGN_STONE_STAIRS_DOWN_II || ygrd == DNGN_STONE_STAIRS_DOWN_III)
+        you.do_shaft();
     else if (ygrd == DNGN_TRANSPORTER)
         _take_transporter();
     else if (get_trap_type(you.pos()) == TRAP_GOLUBRIA)

@@ -5203,8 +5203,10 @@ static dungeon_feature_type _glyph_to_feat(int glyph)
            (glyph == '{') ? DNGN_STONE_STAIRS_UP_I :
            (glyph == ')') ? DNGN_STONE_STAIRS_DOWN_II :
            (glyph == '(') ? DNGN_STONE_STAIRS_UP_II :
+           (glyph == '(') ? DNGN_ALTAR_XOM :
            (glyph == ']') ? DNGN_STONE_STAIRS_DOWN_III :
            (glyph == '[') ? DNGN_STONE_STAIRS_UP_III :
+           (glyph == '[') ? DNGN_ALTAR_XOM :
            (glyph == 'A') ? DNGN_STONE_ARCH :
            (glyph == 'C') ? _pick_an_altar() :   // f(x) elsewhere {dlb}
            (glyph == 'I') ? DNGN_ORCISH_IDOL :

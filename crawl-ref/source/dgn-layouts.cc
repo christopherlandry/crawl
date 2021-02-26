@@ -78,7 +78,7 @@ void dgn_build_basic_level()
     if (!begin.origin() && !end.origin())
     {
         env.grid(begin) = DNGN_STONE_STAIRS_DOWN_II;
-        env.grid(end)   = DNGN_STONE_STAIRS_UP_II;
+        env.grid(end)   = DNGN_ALTAR_XOM;
         upstairs.push_back(begin);
     }
 
@@ -90,7 +90,7 @@ void dgn_build_basic_level()
     if (!begin.origin() && !end.origin())
     {
         env.grid(begin) = DNGN_STONE_STAIRS_DOWN_III;
-        env.grid(end)   = DNGN_STONE_STAIRS_UP_III;
+        env.grid(end)   = DNGN_ALTAR_XOM;
         upstairs.push_back(begin);
     }
 

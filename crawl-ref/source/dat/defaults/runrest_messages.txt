@@ -27,6 +27,7 @@ ignore += You found a web!
 stop += found.*trap
 stop += You have blundered into a Zot trap
 stop += You (are sucked|fall) into a shaft and drop
+stop += fun slide
 stop += A sentinel's mark forms upon you\.
 
 # Enchantments

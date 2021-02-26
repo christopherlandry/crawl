@@ -2962,7 +2962,7 @@ string map_def::validate_map_def(const depth_ranges &default_depths)
 
     // Encompass vaults, pure subvaults, and dummy vaults are exempt from
     // exit-checking.
-    if (orient != MAP_ENCOMPASS && !has_tag("unrand") && !has_tag("dummy")
+    /*if (orient != MAP_ENCOMPASS && !has_tag("unrand") && !has_tag("dummy")
         && !has_tag("no_exits") && map.width() > 0 && map.height() > 0)
     {
         if (!has_exit())
@@ -2972,7 +2972,7 @@ string map_def::validate_map_def(const depth_ranges &default_depths)
                 "this is intentional",
                 name.c_str());
         }
-    }
+    }*/
 
     dlua_set_map dl(this);
     return validate_map_placeable();

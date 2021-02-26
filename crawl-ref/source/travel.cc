@@ -232,6 +232,8 @@ bool is_unknown_stair(const coord_def &p)
 {
     dungeon_feature_type feat = env.map_knowledge(p).feat();
 
+    if(feat == DNGN_STONE_STAIRS_UP_II || feat==DNGN_STONE_STAIRS_UP_III)
+        return false;
     return feat_is_travelable_stair(feat) && !travel_cache.know_stair(p)
            && feat != DNGN_EXIT_DUNGEON;
 }
@@ -3792,6 +3794,8 @@ void LevelInfo::get_stairs(vector<coord_def> &st)
 
         if ((*ri == you.pos() || env.map_knowledge(*ri).known())
             && feat_is_travelable_stair(feat)
+            && feat != DNGN_STONE_STAIRS_UP_II
+            && feat != DNGN_STONE_STAIRS_UP_III
             && (env.map_knowledge(*ri).seen() || !_is_branch_stair(*ri)))
         {
             st.push_back(*ri);
